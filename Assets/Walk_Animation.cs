@@ -16,23 +16,7 @@ public class Walk_Animation : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            m_animator.SetFloat("xMove", 1);
-            m_animator.SetFloat("yMove", 0);
-        }
-        else
-        {
-            if (Input.GetKey(KeyCode.A))
-            {
-                m_animator.SetFloat("xMove", -1);
-                m_animator.SetFloat("yMove", 0);
-            }
-            else
-            {
-                m_animator.SetFloat("xMove", 0);
-                m_animator.SetFloat("yMove", 0);
-            }
-        }
+        float input = Input.GetAxisRaw("Horizontal");
+        m_animator.SetFloat("xMove", input);
     }
 }

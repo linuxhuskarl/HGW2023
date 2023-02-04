@@ -11,7 +11,7 @@ public class PlayPiano : MonoBehaviour
     public AudioClip D_sound;
     public AudioClip Dfis_sound;
     public AudioClip G_sound;
-    public GameObject particle;
+    public ParticleSystem particle;
     bool [] pressed = {false,false,false,false};
     float timePassed = 0f;
 
@@ -20,7 +20,7 @@ public class PlayPiano : MonoBehaviour
     void Start()
     {
         source.volume = 0.9f;
-        particle.SetActive(false);
+        particle.Stop();
     }
 
     // Update is called once per frame
@@ -107,11 +107,11 @@ public class PlayPiano : MonoBehaviour
 
         if(source.isPlaying)
         {
-            particle.SetActive(true);
+            particle.Play();
         }
         else
         {
-            particle.SetActive(false);
+            particle.Stop();
         }
 
     }

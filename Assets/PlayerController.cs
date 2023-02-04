@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         //CheckIfGrounded();
         //ResetJumps();
         Move();
-        Flip();
+        //Flip();
     }
 
     public void Move()
@@ -47,17 +47,17 @@ public class PlayerController : MonoBehaviour
         rb2d.velocity = new Vector2(moveInput * moveSpeed, rb2d.velocity.y);
     }
 
-    public void Flip()
-    {
-        if (moveInput > 0)
-        {
-            transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
-        }
-        if (moveInput < 0)
-        {
-            transform.localScale = new Vector3((-1) * scaleX, transform.localScale.y, transform.localScale.z);
-        }
-    }
+    //public void Flip()
+    //{
+    //    if (moveInput > 0)
+    //    {
+    //        transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
+    //    }
+    //    if (moveInput < 0)
+    //    {
+    //        transform.localScale = new Vector3((-1) * scaleX, transform.localScale.y, transform.localScale.z);
+    //    }
+    //}
 
     public void Jump()
     {

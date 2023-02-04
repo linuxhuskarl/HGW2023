@@ -70,3 +70,18 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/Assets/Brackeys/2D Mega Pack
+/Assets/Scenes/New Animator Controller.controller
+/Assets/Scenes/New Animator Controller.controller.meta
+/Assets/Scenes/SampleScene.unity
+/Assets/SunnyLand Artwork/Sprites/player/run/player-run-1.controller
+/Assets/Unity.VisualScripting.Generated
+/Assets/Unity.VisualScripting.Generated.meta
+/ProjectSettings/BurstAotSettings_StandaloneWindows.json
+/ProjectSettings/VisualScriptingSettings.asset
+/ProjectSettings/TimelineSettings.asset
+/ProjectSettings/TagManager.asset
+/ProjectSettings/CommonBurstAotSettings.json
+/ProjectSettings/BurstAotSettings_WebGL.json
+/popo
+/.gitignore

@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 1552
+  jumpForce: 5
   jumpsAmount: 2
 --- !u!114 &7878141864999692898
 MonoBehaviour:
@@ -227,6 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f84062725c10d4d9abfe3aad743eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 7878141864999692899}
+  C_sound: {fileID: 8300000, guid: ee3bac363b29c2b49b8420197786082c, type: 3}
+  D_sound: {fileID: 8300000, guid: 5de7eae8649eb6b45854b75914338ae5, type: 3}
+  Dfis_sound: {fileID: 8300000, guid: 83871f1c1e47c5846be63e535b8904c8, type: 3}
+  G_sound: {fileID: 8300000, guid: 3feb9ab0f586d334bbfd46da05162191, type: 3}
+  particle: {fileID: 0}
 --- !u!114 &7878141864999692901
 MonoBehaviour:
   m_ObjectHideFlags: 0

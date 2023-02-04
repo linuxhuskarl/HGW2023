@@ -1287,7 +1287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7234320814958762238, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.167457
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7234320814958762238, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1322,8 +1322,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
       propertyPath: ShapeModule.angle
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
       propertyPath: ShapeModule.m_Scale.x
@@ -1334,12 +1346,32 @@ PrefabInstance:
       value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 10
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.38841486
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7234320814958762239, guid: 4dc2e3fdd91837a41ad5030de513e7ba, type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar
@@ -1455,7 +1487,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20392159, g: 0.2, b: 0.08627451, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

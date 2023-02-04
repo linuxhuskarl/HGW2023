@@ -28,12 +28,15 @@ public class PlayPiano : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            source.clip = C_sound;
             pressed[0] = true;
-            source.PlayOneShot(C_sound);
+            source.Stop();
+            source.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            source.clip = D_sound;
             if (pressed[0]==true && pressed[2]==false && pressed[3]==false)
             {
                 pressed[1] = true;
@@ -45,10 +48,12 @@ public class PlayPiano : MonoBehaviour
                 pressed[2] = false;
                 pressed[3] = false;
             }
-            source.PlayOneShot(D_sound);
+            source.Stop();
+            source.Play();
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            source.clip = Dfis_sound;
             if (pressed[0] == true && pressed[1] == true && pressed[3] == false)
             {
                 pressed[2] = true;
@@ -60,11 +65,13 @@ public class PlayPiano : MonoBehaviour
                 pressed[2] = false;
                 pressed[3] = false;
             }
-            source.PlayOneShot(Dfis_sound);
+            source.Stop();
+            source.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            source.clip = G_sound;
             if (pressed[0] == true && pressed[1] == true && pressed[2] == true)
             {
                 pressed[3] = true;
@@ -76,27 +83,34 @@ public class PlayPiano : MonoBehaviour
                 pressed[2] = false;
                 pressed[3] = false;
             }
-            source.PlayOneShot(G_sound);
+            source.Stop();
+            source.Play();
         }
 
         if(pressed[0] == true && pressed[1] == true && pressed[2] == true && pressed[3]==true)
         {
-           
-            particle.SetActive(true);
+            Debug.Log("EVENT");
             timePassed += Time.deltaTime;
-
 
         }
       
-        if (timePassed > 3f)
+        if (timePassed > 5f)
         {
-            Debug.Log("EVENT");
-            particle.SetActive(false);
+            Debug.Log("END");
             pressed[0] = false;
             pressed[1] = false;
             pressed[2] = false;
             pressed[3] = false;
             timePassed = 0;
+        }
+
+        if(source.isPlaying)
+        {
+            particle.SetActive(true);
+        }
+        else
+        {
+            particle.SetActive(false);
         }
 
     }

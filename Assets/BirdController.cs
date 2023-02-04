@@ -2,47 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BirdController : MonoBehaviour
+public class BirdController : AnimalController
 {
-    enum BirdState
-    {
-        Idle,
-        Attack,
-    }
-
     public float idleSpeed;
     public float attackSpeed;
     public Transform player;
-    BirdState state;
+    private BoxCollider2D col2d;
     // Start is called before the first frame update
     void Start()
     {
-        state = BirdState.Idle;
+        col2d = GetComponent<BoxCollider2D>();
+        state = AnimalState.Idle;
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        Vector2 target = new Vector2(player.position.x-1, player.position.y+1);
+        Vector2 target;
+        if (state == AnimalState.Attack)
+        {
+            GameObject enemy = FindClosestEnemy();
+            target = new Vector2(enemy.transform.position.x, enemy.transform.position.y);
+        }
+        else
+        {
+            target = new Vector2(player.position.x - 1, player.position.y + 1);
+        }
         float currentSpeed = GetSpeed(state);
         transform.position = Vector2.MoveTowards(transform.position, target, currentSpeed * Time.fixedDeltaTime);
+
+        if (state == AnimalState.Attack)
+        {
+            Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, col2d.size, 0);
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.CompareTag("Enemy"))
+                {
+                    CancelInvoke(nameof(ClearAttack));
+                    ClearAttack();
+                    break;
+                }
+            }
+        }
     }
 
-    private float GetSpeed(BirdState state)
+    private float GetSpeed(AnimalState state)
     {
-        switch(state)
+        return state switch
         {
-            case BirdState.Idle:
-                return idleSpeed;
-            case BirdState.Attack:
-                return attackSpeed;
-            default:
-                return 0;
-        }
+            AnimalState.Idle => idleSpeed,
+            AnimalState.Attack => attackSpeed,
+            _ => 0,
+        };
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1") && state == AnimalState.Idle)
+        {
+            // TODO usun
+            Attack();
+            Invoke(nameof(ClearAttack), 2);
+        }
     }
 }

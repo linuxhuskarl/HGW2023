@@ -4,7 +4,28 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public enum EnemyState
+    {
+        Idle,
+        Attack,
+        Defend,
+    }
+    public EnemyState state;
     // Start is called before the first frame update
+    public int healthPoints = 3;
+    public void DealDamage(int hp=1)
+    {
+        healthPoints-= hp;
+        if (healthPoints <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
     void Start()
     {
         

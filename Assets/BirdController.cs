@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BirdController : AnimalController
 {
     void FixedUpdate()
@@ -53,11 +54,11 @@ public class BirdController : AnimalController
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && state == AnimalState.Idle)
-        {
-            // TODO usun
-            Attack();
-            Invoke(nameof(ClearAttack), 2);
-        }
+        //if (Input.GetButtonDown("Fire1") && state == AnimalState.Idle)
+        //{
+        //    // TODO usun
+        //    Attack();
+        //    Invoke(nameof(ClearAttack), 2);
+        //}
     }
 }

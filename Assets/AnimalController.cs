@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class AnimalController : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip attackAudioClip;
+    public float audioVolume = 1f;
     internal AnimalState state;
     internal enum AnimalState
     {
@@ -43,6 +46,7 @@ public abstract class AnimalController : MonoBehaviour
     public void Attack()
     {
         state = AnimalState.Attack;
+        audioSource?.PlayOneShot(attackAudioClip, audioVolume);
     }
     public void ClearAttack()
     {

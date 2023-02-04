@@ -92,6 +92,7 @@ public class PlayPiano : MonoBehaviour
             Debug.Log("EVENT");
             timePassed += Time.deltaTime;
 
+
         }
       
         if (timePassed > 5f)

@@ -10,6 +10,17 @@ public abstract class AnimalController : MonoBehaviour
         Idle,
         Attack,
     }
+
+    public float idleSpeed;
+    public float attackSpeed;
+    public Transform player;
+    internal BoxCollider2D col2d;
+    // Start is called before the first frame update
+    void Start()
+    {
+        col2d = GetComponent<BoxCollider2D>();
+        state = AnimalState.Idle;
+    }
     public GameObject FindClosestEnemy()
     {
         GameObject[] gos;

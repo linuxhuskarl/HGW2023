@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class BirdController : AnimalController
 {
-    public float idleSpeed;
-    public float attackSpeed;
-    public Transform player;
-    private BoxCollider2D col2d;
-    // Start is called before the first frame update
-    void Start()
-    {
-        col2d = GetComponent<BoxCollider2D>();
-        state = AnimalState.Idle;
-    }
-
     void FixedUpdate()
     {
         Vector2 target;
+        GameObject enemy = FindClosestEnemy();
+        if (state == AnimalState.Attack & enemy == null)
+        {
+            ClearAttack();
+        }
         if (state == AnimalState.Attack)
         {
-            GameObject enemy = FindClosestEnemy();
             target = new Vector2(enemy.transform.position.x, enemy.transform.position.y);
         }
         else
@@ -39,6 +32,8 @@ public class BirdController : AnimalController
                 {
                     CancelInvoke(nameof(ClearAttack));
                     ClearAttack();
+                    EnemyController ec = hit.gameObject.GetComponent<EnemyController>();
+                    ec.DealDamage(1);
                     break;
                 }
             }

@@ -41,8 +41,8 @@ public class PlayPiano : MonoBehaviour
             _ => null
         };
     }
-    List<SoundNote> attackSong = new List<SoundNote>{ SoundNote.D, SoundNote.D, SoundNote.G, SoundNote.D};
-    private SoundNote KeyCodeToSoundNote(KeyCode keyCode)
+	List<List<SoundNote>> usedSongs = new List<List<SoundNote>>();
+	private SoundNote KeyCodeToSoundNote(KeyCode keyCode)
     {
         return keyCode switch
         {
@@ -83,18 +83,17 @@ public class PlayPiano : MonoBehaviour
             }
         }
 
-        if (playedNotes.Count == attackSong.Count)
+        if (playedNotes.Count == 3)
         {
-            if (playedNotes.SequenceEqual(attackSong))
+            if (usedSongs.Any(x => playedNotes.SequenceEqual(x)))
             {
-                Debug.Log("ATAKUJ PIKACZU");
-                animalController?.Attack();
+				animalController?.ClearAttack();
             }
             else
             {
-                Debug.Log("SPIERDOLIL");
-                animalController?.ClearAttack();
-            }
+				animalController?.Attack();
+                usedSongs.Add(new List<SoundNote>(playedNotes));
+			}
             playedNotes.RemoveRange(0, playedNotes.Count);
         }
 

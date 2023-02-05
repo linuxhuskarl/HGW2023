@@ -7,6 +7,7 @@ public abstract class AnimalController : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip attackAudioClip;
     public float audioVolume = 1f;
+    public float attackRange = 10f;
     internal AnimalState state;
     internal enum AnimalState
     {
@@ -29,7 +30,7 @@ public abstract class AnimalController : MonoBehaviour
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject closest = null;
-        float distance = Mathf.Infinity;
+        float distance = attackRange;
         Vector3 position = transform.position;
         foreach (GameObject go in gos)
         {

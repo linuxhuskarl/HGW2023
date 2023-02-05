@@ -2778,6 +2778,18 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1199185253
       objectReference: {fileID: 0}
+    - target: {fileID: 7878141864999692920, guid: 53a3bc5e54260cd49962dae0a088048d, type: 3}
+      propertyPath: hurtClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 511b31851c084d747ad4d49c664bb87d, type: 3}
+    - target: {fileID: 7878141864999692920, guid: 53a3bc5e54260cd49962dae0a088048d, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878141864999692920, guid: 53a3bc5e54260cd49962dae0a088048d, type: 3}
+      propertyPath: hurtSource
+      value: 
+      objectReference: {fileID: 3573831962852502409}
     - target: {fileID: 7878141864999692921, guid: 53a3bc5e54260cd49962dae0a088048d, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -2838,3 +2850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abb53a4456a75b41ab0257f4400801d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &3573831962852502409 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7878141864999692899, guid: 53a3bc5e54260cd49962dae0a088048d, type: 3}
+  m_PrefabInstance: {fileID: 3573831962852502406}
+  m_PrefabAsset: {fileID: 0}

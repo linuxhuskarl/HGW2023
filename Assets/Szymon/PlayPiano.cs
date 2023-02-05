@@ -67,7 +67,7 @@ public class PlayPiano : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        source.volume = 0.9f;
+        source.volume = 1f;
         particle.Stop();
     }
 

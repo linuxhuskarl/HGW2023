@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public int jumpsAmount;
     public int healthPoints = 3;
     int jumpsLeft;
+    public AudioSource hurtSource;
+    public AudioClip hurtClip;
 
     //public Transform GroundCheck;
     //public LayerMask GroundLayer;
@@ -98,6 +100,7 @@ public class PlayerController : MonoBehaviour
         healthPoints -= v;
         sr.color = Color.magenta;
         Debug.Log("Received Damage " + v);
+        hurtSource.PlayOneShot(hurtClip);
         if (healthPoints <= 0)
         {
             // Die

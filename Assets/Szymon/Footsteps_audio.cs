@@ -11,7 +11,7 @@ public class Footsteps_audio : MonoBehaviour
 
     void Start()
     {
-        source.volume = 0.3f;
+        source.volume = 1f;
     }
 
     // Update is called once per frame

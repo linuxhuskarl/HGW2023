@@ -44,9 +44,10 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         timeSinceLastAttack += Time.fixedDeltaTime;
-        Vector3 difference = player.transform.position - transform.position;
-        float distance = difference.magnitude;
-        if (distance > 1 && distance < 10)
+        BoxCollider2D bc1 = player.GetComponent<BoxCollider2D>();
+        BoxCollider2D bc2 = GetComponent<BoxCollider2D>();
+        float distance = Physics2D.Distance(bc1, bc2).distance;
+        if (distance > 1 && distance < detectionRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, attackSpeed * Time.fixedDeltaTime);
         }

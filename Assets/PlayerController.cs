@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             // Die
             Debug.Log("DIED!!!");
+            MENU_START.MainMenu();
         }
         else
         {

@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 public class MENU_START : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void PlayGame()
+    public static void PlayGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public static void MainMenu()
     {
         SceneManager.LoadScene(0);
     }
 
-     public void PlayTutorial()
+    public static void PlayTutorial()
     {
         SceneManager.LoadScene(2);
     }
 
-    public void QuitGame()
+    public static void QuitGame()
     {
         Application.Quit();
     }

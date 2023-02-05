@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
 
     public int jumpsAmount;
+    public int healthPoints = 3;
     int jumpsLeft;
     //public Transform GroundCheck;
     //public LayerMask GroundLayer;
@@ -19,10 +20,12 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb2d;
     float scaleX;
     CircleCollider2D groundCollider;
+    SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         //groundCollider = GroundCheck.GetComponent<CircleCollider2D>();
         scaleX = transform.localScale.x;
     }
@@ -87,5 +90,26 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("ResetJumps");
         jumpsLeft = jumpsAmount;// jumpsAmount =2;
+    }
+
+    public void DealDamage(int v)
+    {
+        healthPoints -= v;
+        sr.color = Color.magenta;
+        Debug.Log("Received Damage " + v);
+        if (healthPoints <= 0)
+        {
+            // Die
+            Debug.Log("DIED!!!");
+        }
+        else
+        {
+            Invoke(nameof(ClearHurt), 0.5f);
+        }
+    }
+
+    public void ClearHurt()
+    {
+        sr.color = Color.white;
     }
 }

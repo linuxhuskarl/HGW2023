@@ -30,6 +30,17 @@ public class PlayPiano : MonoBehaviour
 
     private float timeSinceLastNote;
 
+    public string GetCurrentNotesText()
+    {
+        string ret = "";
+
+        foreach(var note in playedNotes)
+        {
+            ret += note.ToString() + "\n";
+        }
+
+        return ret;
+    }
     private AudioClip GetAudioClip(SoundNote note)
     {
         return note switch

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public int jumpsAmount;
     public int healthPoints = 3;
     int jumpsLeft;
+
     //public Transform GroundCheck;
     //public LayerMask GroundLayer;
 

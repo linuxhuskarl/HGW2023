@@ -628,6 +628,7 @@ MonoBehaviour:
   hitDelay: 3
   detectionRange: 10
   attackSpeed: 0.5
+  isEndBoss: 0
 --- !u!95 &841060160
 Animator:
   serializedVersion: 5
@@ -1031,6 +1032,7 @@ MonoBehaviour:
   hitDelay: 3
   detectionRange: 10
   attackSpeed: 0.5
+  isEndBoss: 0
 --- !u!95 &1077511948
 Animator:
   serializedVersion: 5
@@ -1217,6 +1219,7 @@ MonoBehaviour:
   hitDelay: 5
   detectionRange: 20
   attackSpeed: 1
+  isEndBoss: 1
 --- !u!95 &1101399708
 Animator:
   serializedVersion: 5
@@ -1535,6 +1538,7 @@ MonoBehaviour:
   hitDelay: 3
   detectionRange: 10
   attackSpeed: 0.5
+  isEndBoss: 0
 --- !u!95 &1255731696
 Animator:
   serializedVersion: 5
@@ -2359,6 +2363,7 @@ MonoBehaviour:
   hitDelay: 3
   detectionRange: 10
   attackSpeed: 0.5
+  isEndBoss: 0
 --- !u!95 &1954890588
 Animator:
   serializedVersion: 5

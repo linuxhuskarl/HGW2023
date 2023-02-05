@@ -21,6 +21,8 @@ public class EnemyController : MonoBehaviour
     public float hitDelay = 3f;
     public float detectionRange = 10f;
     public float attackSpeed = 0.5f;
+    public bool isEndBoss = false;
+
     public void DealDamage(int hp=1)
     {
         healthPoints-= hp;
@@ -32,6 +34,10 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
+        if (isEndBoss)
+        {
+            MENU_START.MainMenu();
+        }
         Destroy(gameObject);
     }
     void Start()
